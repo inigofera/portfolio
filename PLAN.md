@@ -27,7 +27,7 @@ Goal: replace the current Vue 3 / Vue CLI scaffold with a production-ready Svelt
 ### Open questions (need input before content phase)
 - [ ] Confirm persona details per prompt: name, "ML ENGINEER" label, bio paragraphs, location, GitHub URL, email address.
 - [ ] Project list: titles, slugs, years, status badges, tags, multi-paragraph descriptions; which have interactive demos (and what the demo does — ONNX Web / D3 / etc.).
-- [ ] Experience timeline entries (role · company | dates), education, skills groups (`//` categories + pills), publications.
+- [ ] Experience timeline entries (role · company | dates), education, skills groups (`//` categories + pills).
 - [ ] Confirm `inigo.jpg` is the intended portrait and `logo.png` the favicon source.
 
 ---
@@ -65,7 +65,7 @@ All content as typed TypeScript modules (single source of truth):
 - `site.ts` — name, role label ("ML ENGINEER"), location, bio paragraphs, GitHub URL, email.
 - `projects.ts` — `{ slug, title, year, status, tags[], description: string[] | blocks, demo?: 'name' }`; drives `/projects`, home featured subset (first N), and the prerender slug list.
 - `experience.ts` — timeline cards (role · company | dates).
-- `education.ts`, `skills.ts` (categories with `//` headers + pill tags), `publications.ts`.
+- `education.ts`, `skills.ts` (categories with `//` headers + pill tags).
 - Content authored first-person, precise, slightly introspective; dense short paragraphs. Draft from existing repo info + answers to Phase 0 questions.
 
 ## Phase 4 — Layout & Components (`src/lib/components/`)
@@ -80,7 +80,7 @@ All content as typed TypeScript modules (single source of truth):
 - `/` Home: hero (small uppercase "ML ENGINEER" label + status dot → large name → short bio → GitHub + Email links), "FEATURED PROJECTS" subset of cards + "All projects →" link, footer.
 - `/projects`: "WORK" label above title "Projects", short subtitle, grid of all project cards.
 - `/projects/[slug]`: back link "← All projects", status badge + year, large title, tag pills, multi-paragraph description, optional interactive demo section (registry map slug → demo component), footer. `+page.js` with `async = true` enumerating slugs for prerendering; 404 handling for unknown slugs.
-- `/about`: "ABOUT" label, large name + location, longer bio paragraphs, experience timeline cards, education section, skills grouped by mono `// ...` headers with pill tags, publications, contact section, footer.
+- `/about`: "ABOUT" label, large name + location, longer bio paragraphs, experience timeline cards, education section, skills grouped by mono `// ...` headers with pill tags, contact section, footer.
 
 ## Phase 6 — Routing & Static Build Details
 - `vite.config.ts`: adapter-static `{ fallback: 'index.html' }`.
