@@ -6,76 +6,57 @@ export interface Project {
 	tags: string[];
 	description: string[];
 	demo?: string;
+	hasDetailedContent?: boolean;
 }
 
 export const projects: Project[] = [
 	{
-		slug: 'design-system-architecture',
-		title: 'Design System Architecture',
-		year: 2025,
-		status: 'active',
-		tags: ['design systems', 'component library', 'accessibility'],
-		description: [
-			'Architectural patterns for scalable design systems. Explores token-based theming, component composition strategies, and documentation-driven development.',
-			'Benchmarked against industry standards including Material Design and Ant Design. Achieves consistent visual language across web and mobile platforms.'
-		],
-		demo: 'component-explorer'
-	},
-	{
-		slug: 'data-visualization-toolkit',
-		title: 'Data Visualization Toolkit',
-		year: 2025,
-		status: 'active',
-		tags: ['visualization', 'd3', 'interactive charts'],
-		description: [
-			'Browser-based visualization toolkit using D3 and SVG. Supports dynamic data binding, responsive layouts, and accessible chart types.',
-			'Designed for embedding in analytics dashboards with emphasis on performance and interaction patterns.'
-		],
-		demo: 'chart-explorer'
-	},
-	{
-		slug: 'ux-case-study-ecommerce',
-		title: 'E-commerce UX Case Study',
-		year: 2024,
+		slug: 'buylocal',
+		title: 'BuyLocal',
+		year: 2020,
 		status: 'completed',
-		tags: ['case study', 'user research', 'conversion optimization'],
+		tags: ['case study', 'hyperlocal delivery', 'user research'],
 		description: [
-			'Systematic study of checkout flow usability across multiple e-commerce platforms. Analyzes friction points, cognitive load, and conversion metrics.',
-			'Findings suggest that progressive disclosure reduces abandonment rates while maintaining perceived simplicity.'
-		]
+			'Hyperlocal delivery solution to help customers buy products from nearby stores and supermarkets easily while supporting the local economy.',
+			'Developed during the pandemic when local businesses struggled due to lockdowns. Envisions a way for people to be digitally connected to local businesses with the same convenience as big corporations.'
+		],
+		hasDetailedContent: true
 	},
 	{
-		slug: 'responsive-layout-system',
-		title: 'Responsive Layout System',
-		year: 2024,
+		slug: 'cashpool',
+		title: 'CashPool',
+		year: 2019,
 		status: 'completed',
-		tags: ['css', 'grid', 'flexbox'],
+		tags: ['case study', 'money pooling', 'group finance'],
 		description: [
-			'Layout system for complex responsive interfaces. Implements CSS Grid and Flexbox patterns with fallback strategies for legacy browsers.',
-			'Used to evaluate layout stability under varying content lengths and viewport sizes.'
-		]
+			'Money pooling app that lets users create groups and pool money towards shared goals with easy and transparent bookkeeping.',
+			'Followed design thinking process including focus group workshops, individual interviews, user journey mapping, and iterative prototyping.'
+		],
+		hasDetailedContent: true
 	},
 	{
-		slug: 'ux-case-study-mobile-app',
-		title: 'Mobile App UX Case Study',
-		year: 2023,
-		status: 'archived',
-		tags: ['case study', 'mobile', 'interaction design'],
+		slug: 'shoppersmap',
+		title: 'ShoppersMap',
+		year: 2019,
+		status: 'completed',
+		tags: ['case study', 'supermarket navigation', 'shared shopping'],
 		description: [
-			'Mobile interaction patterns for task-oriented applications. Explores gesture-based navigation and touch target optimization.',
-			'Explored instruction-tuning strategies to improve answer coherence and reduce hallucination on out-of-distribution questions.'
-		]
+			'Engaging new way for users to shop at their supermarket with shared shopping lists and in-store navigation.',
+			'Solves problems of group shopping coordination, item location, and efficient collection through user research and design sprint methodology.'
+		],
+		hasDetailedContent: true
 	},
 	{
-		slug: 'visual-software-prototyping',
-		title: 'Visual Software Prototyping',
-		year: 2023,
-		status: 'archived',
-		tags: ['prototyping', 'figma', 'interaction design'],
+		slug: 'buylocal-design-system',
+		title: 'BuyLocal Design System',
+		year: 2020,
+		status: 'completed',
+		tags: ['design system', 'mobile design', 'component library'],
 		description: [
-			'Prototyping workflow for rapid visual software iteration. Explored component-based design with live preview and version control.',
-			'Resulting prototypes achieve competitive fidelity at significantly reduced development time.'
-		]
+			'Mobile design system created as part of the BuyLocal application.',
+			'Establishes consistent visual language and component patterns for the hyperlocal delivery platform.'
+		],
+		hasDetailedContent: true
 	}
 ];
 

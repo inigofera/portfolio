@@ -5,6 +5,7 @@
 	import Tag from '../../../lib/components/Tag.svelte';
 
 	const project = page.data.project;
+	const html = page.data.html;
 </script>
 
 <svelte:head>
@@ -34,8 +35,13 @@
 			{/each}
 		</div>
 
-		{#each project.description as paragraph}
-			<p class="text-lg leading-relaxed text-muted-foreground mb-4">{paragraph}</p>
-		{/each}
+		<!-- Render detailed HTML content if available -->
+		{#if html}
+			<div class="case-study-content">{@html html}</div>
+		{:else}
+			{#each project.description as paragraph}
+				<p class="text-lg leading-relaxed text-muted-foreground mb-4">{paragraph}</p>
+			{/each}
+		{/if}
 	</section>
 {/if}

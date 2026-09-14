@@ -35,6 +35,148 @@
 	}
 }
 
+/*
+ * Case-study content
+ * ------------------
+ * Typography for HTML rendered from markdown (see `lib/utils/markdown.ts`).
+ * Defined here, in the global stylesheet, so it applies to the `{@html}`
+ * output on every project page without `!important` or inline styles.
+ * The `components` layer sits above Tailwind's resets but below utilities,
+ * so any utility class applied to the wrapper still wins.
+ */
+@layer components {
+	.case-study-content {
+		max-width: 100%;
+		color: var(--color-foreground);
+	}
+
+	/* Headings */
+	.case-study-content h1 {
+		margin-block: 2rem 1rem;
+		font-size: 2.5rem;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	.case-study-content h2 {
+		margin-block: 2rem 0.75rem;
+		font-size: 1.875rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+
+	.case-study-content h3 {
+		margin-block: 1.5rem 0.5rem;
+		font-size: 1.5rem;
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	.case-study-content h4 {
+		margin-block: 1.25rem 0.5rem;
+		font-size: 1.25rem;
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	/* Body copy */
+	.case-study-content p {
+		margin-block: 0 1.5rem;
+		font-size: 1.125rem;
+		line-height: 1.75;
+	}
+
+	/* Lists */
+	.case-study-content ul,
+	.case-study-content ol {
+		margin-block: 0 1.25rem;
+		padding-inline-start: 1.5rem;
+		font-size: 1.125rem;
+		line-height: 1.75;
+	}
+
+	.case-study-content ul {
+		list-style-type: disc;
+	}
+
+	.case-study-content ol {
+		list-style-type: decimal;
+	}
+
+	.case-study-content li {
+		margin-block: 0 0.5rem;
+	}
+
+	.case-study-content li > ul,
+	.case-study-content li > ol {
+		margin-block: 0.5rem 0;
+	}
+
+	/* Code */
+	.case-study-content code {
+		font-family: var(--font-mono);
+		font-size: 0.9em;
+		padding: 0.25em 0.5em;
+		border-radius: 0.25rem;
+	}
+
+	.case-study-content pre {
+		margin-block: 0.5rem 1.5rem;
+		padding: 1rem;
+		font-family: var(--font-mono);
+		font-size: 0.9rem;
+		border-radius: 0.5rem;
+		overflow-x: auto;
+	}
+
+	/* Blockquotes */
+	.case-study-content blockquote {
+		margin-block: 0.5rem 1.5rem;
+		padding-inline-start: 1rem;
+		border-inline-start: 4px solid currentColor;
+		font-style: italic;
+	}
+
+	/* Links */
+	.case-study-content a {
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
+
+	.case-study-content a:hover {
+		color: var(--color-accent);
+	}
+
+	/* Media */
+	.case-study-content img {
+		max-width: 100%;
+		height: auto;
+		margin-block: 1rem 1.5rem;
+		border-radius: 0.5rem;
+	}
+
+	/* Tables */
+	.case-study-content table {
+		width: 100%;
+		margin-block: 0.5rem 1.5rem;
+		border-collapse: collapse;
+	}
+
+	.case-study-content th,
+	.case-study-content td {
+		padding: 0.75rem;
+		border: 1px solid currentColor;
+		text-align: start;
+	}
+
+	/* Horizontal rule */
+	.case-study-content hr {
+		margin-block: 3rem;
+		border-block-start: 2px solid currentColor;
+	}
+}
+
 @keyframes fade-in {
 	from { opacity: 0; transform: translateY(4px); }
 	to { opacity: 1; transform: translateY(0); }
