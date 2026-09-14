@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		<link href="../_app/immutable/entry/start.Dq-DEzj-.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/C0N7OYZH.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/D6GHynRG.js" rel="modulepreload">
+		<link href="../_app/immutable/entry/app.rnn0CvWb.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/0.BpteSuyD.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/C-Oc2Fl3.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/5.CV2CjqVn.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/DDVjQ1fP.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/D365q4v_.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/BefKlH3z.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/BmO3Hi-F.js" rel="modulepreload">
+		<!--12qhfyh--><!----><!--gygcht--><!----><title>CashPool — Iñigo Artolozaga</title>
+		<link href="../_app/immutable/assets/0.IaadA3zZ.css" rel="stylesheet">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[0--><!--[--><div class="min-h-screen flex flex-col bg-background text-foreground font-sans antialiased"><header class="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-border"><div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between"><a href="/" class="font-mono text-sm tracking-wide"><span class="text-accent">//</span> Iñigo Artolozaga</a> <nav class="hidden md:flex items-center gap-6"><a href="/" class="font-mono text-sm tracking-wide transition-colors duration-150 text-muted-foreground hover:text-foreground">Home</a> <a href="/projects" class="font-mono text-sm tracking-wide transition-colors duration-150 text-muted-foreground hover:text-foreground">Projects</a> <a href="/about" class="font-mono text-sm tracking-wide transition-colors duration-150 text-muted-foreground hover:text-foreground">About</a></nav> <button class="md:hidden text-foreground" aria-label="Toggle menu">☰</button></div> <!--[-1--><!--]--></header><!----> <main class="flex-1 max-w-5xl mx-auto w-full px-6 py-8 animate-fade-in"><!--[--><!--[-1--><a href="/projects" class="font-mono text-sm tracking-wide text-muted-foreground hover:text-accent transition-colors duration-150 mb-8 inline-block">← All projects</a> <section class="mb-16"><div class="flex items-center gap-2 mb-4"><span class="inline-block w-2 h-2 rounded-full bg-accent"></span><!----> <span class="font-mono text-xs tracking-wide text-muted-foreground">2019</span></div> <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">CashPool</h1> <div class="flex flex-wrap gap-2 mb-8"><!--[--><span class="inline-block px-2 py-1 text-xs font-mono tracking-wide rounded bg-card border border-border text-muted-foreground">case study</span><span class="inline-block px-2 py-1 text-xs font-mono tracking-wide rounded bg-card border border-border text-muted-foreground">money pooling</span><span class="inline-block px-2 py-1 text-xs font-mono tracking-wide rounded bg-card border border-border text-muted-foreground">group finance</span><!--]--></div> <!--[0--><div class="case-study-content"><!----><h1 id="cashpool" tabindex="-1">CashPool</h1>
+<p><strong>CashPool</strong> is a money pooling app that lets users create groups and pool money towards shared goals. The app provides a platform with easy and transparent bookkeeping for the ideal money pooling experience.</p>
+<p><img src="/work/cashpool/Untitled.png" alt="image"></p>
+<h2 id="table-of-contents" tabindex="-1">Table of Contents</h2>
+<ul>
+<li><a href="#initial-hypothesis">Initial Hypothesis</a></li>
+<li><a href="#goal">Goal</a></li>
+<li><a href="#process">Process</a>
+<ul>
+<li><a href="#phase-1-emphatise">Phase 1: Emphatise</a>
+<ul>
+<li><a href="#workshopping-5-focus-groups">Workshopping: 5 Focus Groups</a></li>
+<li><a href="#17-individual-interviews">17 individual interviews</a></li>
+<li><a href="#key-findings-from-card-ranking">Key findings from card ranking</a></li>
+</ul>
+</li>
+<li><a href="#phase-2-define">Phase 2: Define</a>
+<ul>
+<li><a href="#user-profiles">User Profiles</a></li>
+<li><a href="#task-organization-model">Task Organization Model</a></li>
+<li><a href="#user-roles">User roles</a></li>
+<li><a href="#user-journey-map">User Journey Map</a></li>
+</ul>
+</li>
+<li><a href="#phase-3-ideate">Phase 3: Ideate</a></li>
+<li><a href="#phase-4-prototype">Phase 4: Prototype</a></li>
+<li><a href="#phase-5-test">Phase 5: Test</a>
+<ul>
+<li><a href="#usability-tests">Usability Tests</a></li>
+<li><a href="#usability-issues">Usability Issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#final-designs">Final Designs</a>
+<ul>
+<li><a href="#improvements-of-hi-fi-prototype-over-lo-fi">Improvements of Hi-fi Prototype over Lo-fi</a></li>
+</ul>
+</li>
+<li><a href="#project-takeaways">Project takeaways</a></li>
+</ul>
+<h2 id="initial-hypothesis" tabindex="-1">Initial Hypothesis</h2>
+<p>“Students or young adults with limited resources who are part of a community often find it difficult to collectively arrange money for their goals.”</p>
+<h2 id="goal" tabindex="-1">Goal</h2>
+<p>To create an application that allows users to create teams and pool money towards a common goal. The application will enable effective and engaging interaction between the users with high transparency.</p>
+<h2 id="process" tabindex="-1">Process</h2>
+<p>For this case study, I decided to follow the Design Thinking process, which is pictured below:</p>
+<p><img src="/work/cashpool/Untitled%201.png" alt="image"></p>
+<h3 id="phase-1-emphatise" tabindex="-1">Phase 1: Emphatise</h3>
+<p><strong>Cash pooling</strong> is an activity that involves multiple individuals, and therefore it is of vital importance to understand the human interaction dynamics involved in it to be able to leverage technology to enhance the process…</p>
+<p>We have an initial hypothesis that there could be variation in the behavior of the users based on their age, occupation and level of income. To evaluate this, we conducted focus group workshops and interviews. (We included working adults and students in our interviews.)</p>
+<h4 id="workshopping-5-focus-groups" tabindex="-1">Workshopping: 5 Focus Groups</h4>
+<p>The focus group sessions were used to <strong>simulate a live cash pooling activity</strong> within a group of friends. We also had external circumstances arise to simulate real-life situations.</p>
+<p><img src="/work/cashpool/Untitled%202.png" alt="image"></p>
+<p><img src="/work/cashpool/Untitled%203.png" alt="image"></p>
+<p>The key findings of the Focus Groups were the following:</p>
+<ul>
+<li>Mutual trust was expected in the group (But people usually didn’t share how much money they had).</li>
+<li>Changing the money goal pooling required group discussion.</li>
+<li>Communication is key. Sometimes information was not relayed properly between people.</li>
+<li>Whether individual contributions should be visible to everyone was usually a group decision.</li>
+</ul>
+<h4 id="17-individual-interviews" tabindex="-1">17 individual interviews</h4>
+<p>We had online interviews with users about their experience and expectations on money pooling. At the end of the interview, we gave the users cards describing relevant factors in a money pooling process. We asked them to rank them in importance.</p>
+<p><img src="/work/cashpool/Untitled%204.png" alt="image"></p>
+<p><img src="/work/cashpool/Untitled%205.png" alt="image"></p>
+<p>The key findings from the individual interviews were:</p>
+<ul>
+<li>Varied level of commitment to cash pool.</li>
+<li>Preference of the transaction method is different.</li>
+<li>Choice of a leader varies (most responsible, eldest in the group, person who started the pool, person who wiill contribute the most…).</li>
+<li>Based on the goal and urgency, some people are open to borrowing the money from other users and adding it to the pool.</li>
+</ul>
+<h4 id="key-findings-from-card-ranking" tabindex="-1">Key findings from card ranking</h4>
+<p>The card sorting helped identify the priority for key attributes in money pooling among teenagers and young adults:</p>
+<p><img src="/work/cashpool/Untitled%206.png" alt="image"></p>
+<h3 id="phase-2-define" tabindex="-1">Phase 2: Define</h3>
+<p>With detailed analysis of the user research, we were able to define:</p>
+<ul>
+<li>Two <strong>User Profiles</strong></li>
+<li>Two <strong>User Roles</strong></li>
+<li>A <strong>Task Organization Model</strong></li>
+<li>A <strong>User Journey Map</strong></li>
+</ul>
+<h4 id="user-profiles" tabindex="-1">User Profiles</h4>
+<p><img src="/work/cashpool/Untitled%207.png" alt="image"></p>
+<p><img src="/work/cashpool/Untitled%208.png" alt="image"></p>
+<h4 id="task-organization-model" tabindex="-1">Task Organization Model</h4>
+<p><img src="/work/cashpool/Untitled%209.png" alt="image"></p>
+<h4 id="user-roles" tabindex="-1">User roles</h4>
+<p>It was evident from our research that there are two user roles in money pooling Leader and the member.</p>
+<p><strong>Leader</strong></p>
+<ul>
+<li>Responsible for managing the money pool. They are part of the team and are selected by the team.</li>
+<li>Gets informed when pool activities are not following the schedule.</li>
+<li>Settles disputes.</li>
+<li>Handles the pooled money.</li>
+</ul>
+<p><strong>Member</strong></p>
+<ul>
+<li>Joins the pool group and contributes money towards the common goal.</li>
+<li>Adds money to the pool.</li>
+<li>Checks the status of his contribution and pool.</li>
+<li>Raises issues.</li>
+</ul>
+<h4 id="user-journey-map" tabindex="-1">User Journey Map</h4>
+<p>From the information gathered, we organized the user tasks and then created a User Journey Map to understand the users’ experience throughout the process.</p>
+<p><strong>Teenager Journey Map</strong></p>
+<p><img src="/work/cashpool/Untitled%2010.png" alt="image"></p>
+<p><strong>Working Adult Journey Map</strong></p>
+<p><img src="/work/cashpool/Untitled%2011.png" alt="image"></p>
+<h3 id="phase-3-ideate" tabindex="-1">Phase 3: Ideate</h3>
+<p>With a detailed understanding of the user tasks, we started brainstorming ideas and sketching.</p>
+<p><img src="/work/cashpool/Untitled%2012.png" alt="image"></p>
+<p><img src="/work/cashpool/Untitled%2013.png" alt="image"></p>
+<p>We used dot voting to define each feature, further brainstormed on them, and finally rearranged them taskwise to identify missing screens. We understood from the user analysis that working adults use desktop applications, so we included both web and mobile applications in the low fi prototype stage.</p>
+<p><img src="/work/cashpool/Untitled%2014.png" alt="image"></p>
+<h3 id="phase-4-prototype" tabindex="-1">Phase 4: Prototype</h3>
+<p>We converted our rough sketches into lo-fi prototypes using Balsamiq. Main features:</p>
+<ul>
+<li>Pool creation &amp; management</li>
+<li>Resolving conflicts through polling</li>
+<li>Pool Participation</li>
+</ul>
+<p><img src="/work/cashpool/Untitled%2015.png" alt="image"></p>
+<p><img src="/work/cashpool/Untitled%2016.png" alt="image"></p>
+<p><img src="/work/cashpool/Untitled%2017.png" alt="image"></p>
+<p><img src="/work/cashpool/Untitled%2018.png" alt="image"></p>
+<p><img src="/work/cashpool/Untitled%2019.png" alt="image"></p>
+<h3 id="phase-5-test" tabindex="-1">Phase 5: Test</h3>
+<h4 id="usability-tests" tabindex="-1">Usability Tests</h4>
+<p>We conducted 8 usability tests with 5 female and 3 male users, of which 5 belonged to the working adult’s profile and 3 to the student profile. One team member facilitating the interview, and the second member observed and took notes. The task document was shared through Google Docs and the prototype was tested in Figma while screen sharing.</p>
+<p><strong>Effectiveness</strong></p>
+<p>We defined the optimum amount of steps required to complete a task and kept it as a benchmark to evaluate the prototype. Any deviation from this was counted as a mistake.</p>
+<p>The Web prototype showed better results for Task 1 and the Mobile one did better in Task 2.</p>
+<p><img src="/work/cashpool/Untitled%2020.png" alt="image"></p>
+<p>Any elemental action done by the user was recorded and compared among the different tasks. This helped in identifying areas of the interface that were confusing for the user.</p>
+<p><strong>Efficiency</strong></p>
+<p>The Mobile prototype showed more efficiency.</p>
+<p><img src="/work/cashpool/Untitled%2021.png" alt="image"></p>
+<p><img src="/work/cashpool/Untitled%2022.png" alt="image"></p>
+<p><strong>User satisfaction</strong></p>
+<p><img src="/work/cashpool/Untitled%2023.png" alt="image"></p>
+<p>We used a standardized user satisfaction questionnaire to evaluate if the users liked the application.</p>
+<p>We received more positive and convergent results for CashPool Web, whereas the results for CashPool Mobile were more negative and divergent.</p>
+<p>Users reported a <strong>more satisfactory experience</strong> with the Web prototype.</p>
+<p><img src="/work/cashpool/Untitled%2024.png" alt="image"></p>
+<h4 id="usability-issues" tabindex="-1">Usability Issues</h4>
+<p><strong>Mobile</strong></p>
+<p><img src="/work/cashpool/Untitled%2025.png" alt="image"></p>
+<p><strong>Web</strong></p>
+<p><img src="/work/cashpool/Untitled%2026.png" alt="image"></p>
+<p><img src="/work/cashpool/Untitled%2027.png" alt="image"></p>
+<h2 id="final-designs" tabindex="-1">Final Designs</h2>
+<p><img src="/work/cashpool/Untitled%2028.png" alt="image"></p>
+<h3 id="improvements-of-hi-fi-prototype-over-lo-fi" tabindex="-1">Improvements of Hi-fi Prototype over Lo-fi</h3>
+<p><strong>Shortcuts to commonly used functions</strong></p>
+<p><img src="/work/cashpool/Untitled%2029.png" alt="image"></p>
+<p><strong>Improved Button Label and Flow for Contribution</strong></p>
+<p><img src="/work/cashpool/Untitled%2030.png" alt="image"></p>
+<h2 id="project-takeaways" tabindex="-1">Project takeaways</h2>
+<p>The following are key takeaways from the different phases of the project:</p>
+<h3 id="user-research" tabindex="-1">User Research</h3>
+<ul>
+<li>Research shaped the product far more than the assumptions we started with. Five focus groups and seventeen interviews showed that money pooling is as much a social problem as a financial one — the design had to make contributions visible enough to build trust, yet private enough to feel safe.</li>
+<li>The card ranking exercise turned out to be the most useful part of the research. Asking people to prioritise factors rather than describe them surfaced tensions we would otherwise have missed, and it gave us a clear order to design against.</li>
+<li>Insights only became useful once they were tied to a flow. Translating findings into concrete features kept the design grounded, and it meant every decision could be traced back to something a real user had told us.</li>
+</ul>
+<h3 id="ideation-lo-fi-prototype" tabindex="-1">Ideation &amp; Lo-fi Prototype</h3>
+<ul>
+<li>Sketching and dot voting let us generate many directions quickly and then commit to the strongest ones as a team, rather than defending individual ideas.</li>
+<li>Building the Task Organization Model before the prototype paid off. It kept the lo-fi screens organised around what users were trying to achieve, and it exposed gaps in the flow while they were still cheap to fix.</li>
+<li>Staying at low fidelity for as long as we did kept the feedback focused on the concept rather than the visuals. By the time we moved into Balsamiq and then high fidelity, the structure of the product was already validated.</li>
+</ul>
+<h3 id="hi-fi-prototype" tabindex="-1">Hi-fi prototype</h3>
+<ul>
+<li>The usability tests were a lesson in how much presentation matters. Both prototypes shared the same underlying flows, yet effectiveness depended on the task, mobile proved more efficient, and only the web version left users satisfied.</li>
+<li>Most of the issues we found were small and specific, such as unclear button labels and the lack of shortcuts to common actions. That confirmed that refinement at this stage is about removing friction, not adding features.</li>
+<li>The distance between the lo-fi and hi-fi prototypes was the clearest measure of progress. Iteration — not any single idea — is what turned a workable concept into an interface people could use with confidence.</li>
+</ul><!----></div><!--]--></section><!--]--><!--]--><!----></main> <footer class="border-t border-border mt-16"><div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between"><span class="font-mono text-sm tracking-wide text-muted-foreground">// ux engineer</span> <div class="flex items-center gap-4"><a href="https://github.com/inigo-artolozaga" target="_blank" rel="noopener noreferrer" class="font-mono text-sm tracking-wide text-muted-foreground hover:text-accent transition-colors duration-150">GitHub</a> <a href="mailto:inigo@artolozaga.dev" class="font-mono text-sm tracking-wide text-muted-foreground hover:text-accent transition-colors duration-150">Email</a></div></div></footer><!----></div><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_89p1xu = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../_app/immutable/entry/start.Dq-DEzj-.js"),
+						import("../_app/immutable/entry/app.rnn0CvWb.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
