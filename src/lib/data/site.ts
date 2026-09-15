@@ -1,6 +1,6 @@
 export const site = {
 	name: 'Iñigo Artolozaga',
-	roleLabel: 'ML ENGINEER',
+	roleLabel: 'UX ENGINEER',
 	location: 'Amsterdam, Netherlands',
 	bioShort: 'UX engineer focused on practical design systems and visual software. I build interfaces that bridge research and production.',
 	bioLong: [

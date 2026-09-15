@@ -1,0 +1,1 @@
+import{L as e,_ as t,g as n,j as r,y as i}from"./BVQlRAkt.js";import"./xihTtKlq.js";var a=i(`<span class="inline-block px-2 py-1 text-xs font-mono tracking-wide rounded bg-card border border-border text-muted-foreground"> </span>`);function o(i,o){var s=a(),c=e(s,!0);r(()=>n(c,o.label)),t(i,s)}export{o as t};

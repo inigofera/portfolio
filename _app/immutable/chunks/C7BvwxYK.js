@@ -1,0 +1,1 @@
+import{F as e,J as t,_ as n,d as r,y as i}from"./BVQlRAkt.js";import"./xihTtKlq.js";var a=i(`<span class="font-mono text-xs tracking-widest uppercase text-muted-foreground"><!></span>`);function o(i,o){var s=a(),c=e(s);r(c,()=>o.children),t(s),n(i,s)}export{o as t};

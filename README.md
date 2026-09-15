@@ -1,4 +1,4 @@
-# Portfolio — ML Engineer
+# Portfolio — UX Engineer
 
 Personal portfolio website built with SvelteKit, Bun, and Tailwind CSS v4. Static output via adapter-static with full prerendering.
 
