@@ -3,12 +3,14 @@
 	import StatusDot from './StatusDot.svelte';
 	import Tag from './Tag.svelte';
 
-	let { project, thumbnail }: { project: Project; thumbnail?: string } = $props();
+	let { project, thumbnail, decorative = false }: { project: Project; thumbnail?: string; decorative?: boolean } = $props();
 </script>
 
 <a
 	href={`/projects/${project.slug}`}
-	class="group flex flex-col overflow-hidden rounded-[0.75rem] border border-border bg-card transition-colors duration-150 hover:border-accent"
+	tabindex={decorative ? -1 : undefined}
+	aria-hidden={decorative || undefined}
+	class="group flex h-full flex-col overflow-hidden rounded-[0.75rem] border border-border bg-card transition-colors duration-150 hover:border-accent"
 >
 	{#if thumbnail}
 		<div class="aspect-square shrink-0 overflow-hidden border-b border-border bg-muted">
