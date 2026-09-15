@@ -1,5 +1,7 @@
 export const markdown = `# BuyLocal Design System
 
+[Click here to read about the BuyLocal project](/projects/buylocal)
+
 This Design System was created as part of the BuyLocal application.
 
 **BuyLocal** is a Hyperlocal delivery solution to help customers buy products from nearby stores and supermarkets easily and support the local economy.
