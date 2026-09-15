@@ -39,9 +39,9 @@
 
 	<div class="absolute inset-y-0 right-0 hidden lg:block">
 		<div class="max-w-5xl mx-auto h-full px-6 flex">
-			<div class="ml-auto max-w-md flex h-full flex-col justify-between space-y-4 py-16">
-				{#each site.bioLong as paragraph}
-					<p class="text-lg md:text-xl xl:text-2xl leading-relaxed text-white/80">{paragraph}</p>
+			<div class="ml-auto max-w-xl flex h-full flex-col justify-between space-y-4 py-24">
+				{#each site.bioLong as paragraph, i}
+					<p class="bio-fade text-lg md:text-xl xl:text-2xl leading-relaxed text-white/80" style:animation-delay="{i * 1000}ms">{paragraph}</p>
 				{/each}
 			</div>
 		</div>
@@ -55,8 +55,8 @@
 
 <!-- Bio (small screens) -->
 <section class="mb-16 lg:hidden">
-	{#each site.bioLong as paragraph}
-		<p class="text-lg leading-relaxed text-muted-foreground mb-4">{paragraph}</p>
+	{#each site.bioLong as paragraph, i}
+		<p class="bio-fade text-lg leading-relaxed text-muted-foreground mb-4" style:animation-delay="{i * 1000}ms">{paragraph}</p>
 	{/each}
 </section>
 
@@ -69,6 +69,9 @@
 		<div class="bg-card border border-border rounded-[0.75rem] p-6 mb-4 transition-colors duration-150 hover:border-accent">
 			<h3 class="text-lg font-semibold">{exp.role}</h3>
 			<p class="font-mono text-sm tracking-wide text-muted-foreground mt-1">{exp.company} | {exp.dates}</p>
+			{#if exp.location}
+				<p class="font-mono text-xs tracking-wide text-muted-foreground/70 mt-1">{exp.location}</p>
+			{/if}
 
 			{#each exp.description as desc}
 				<p class="text-sm leading-relaxed text-muted-foreground mt-4">{desc}</p>
@@ -86,6 +89,9 @@
 		<div class="bg-card border border-border rounded-[0.75rem] p-6 mb-4 transition-colors duration-150 hover:border-accent">
 			<h3 class="text-lg font-semibold">{edu.degree}</h3>
 			<p class="font-mono text-sm tracking-wide text-muted-foreground mt-1">{edu.institution} | {edu.dates}</p>
+			{#if edu.details}
+				<p class="text-sm leading-relaxed text-muted-foreground mt-4">{edu.details}</p>
+			{/if}
 		</div>
 	{/each}
 </section>
@@ -120,3 +126,24 @@
 			<a href={`mailto:${site.email}`} class="font-mono text-sm tracking-wide text-accent hover:underline">Email</a>
 	</div>
 </section>
+
+<style>
+	@keyframes bio-fade-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.bio-fade {
+		animation: bio-fade-in 0.8s ease-out both;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.bio-fade {
+			animation: none;
+		}
+	}
+</style>

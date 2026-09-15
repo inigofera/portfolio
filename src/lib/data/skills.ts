@@ -6,18 +6,18 @@ export interface SkillCategory {
 export const skills: SkillCategory[] = [
 	{
 		header: 'ux design',
-		skills: ['interaction design', 'user research', 'usability testing', 'design systems', 'accessibility']
+		skills: ['user experience (ux)', 'interaction design', 'user research', 'usability testing', 'prototyping', 'user flows']
 	},
 	{
-		header: 'frontend engineering',
-		skills: ['react', 'vue', 'svelte', 'typescript', 'css', 'html']
+		header: 'design engineering',
+		skills: ['design engineering', 'design strategy', 'knowledge management']
 	},
 	{
-		header: 'visualization',
-		skills: ['d3.js', 'chart libraries', 'data visualization', 'svg manipulation']
+		header: 'marketing & automation',
+		skills: ['marketing automation', 'adobe campaign classic/standard', 'adobe experience cloud', 'branding', 'marketing campaigns']
 	},
 	{
 		header: 'tools & workflows',
-		skills: ['figma', 'prototyping', 'version control', 'component architecture', 'design tokens']
+		skills: ['figma', 'jira', 'confluence', 'scrum / agile']
 	}
 ];
