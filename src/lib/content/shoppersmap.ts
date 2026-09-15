@@ -188,7 +188,7 @@ The following are key takeaways from each phase of the project:
 
 ### User Research
 
-- The project began with our own experience of shopping for a family, but the twelve interviews showed how much we had taken for granted. The frustrations that mattered most were surprisingly small — not finding an item, or being slowed down when the supermarket moved things around.
+- The project began with our own experience of shopping for a family, but the twelve interviews showed how much we had taken for granted. The frustrations that mattered most were surprisingly small: not finding an item, or being slowed down when the supermarket moved things around.
 - We resisted forcing the research into personas. The interviews pointed to two distinct shoppers, the Student and the Family shopper, but not to enough detail for rich personas, so user profiles were the more honest tool.
 - The affinity diagram, value proposition canvas and empathy map did the real work: turning scattered quotes into two clearly stated problems and a goal we could design against.
 
@@ -200,6 +200,6 @@ The following are key takeaways from each phase of the project:
 
 ### Hi-fi prototype
 
-- Testing only the high-fidelity prototype was a constraint rather than a plan, but 16 participants gave us a solid read. The prototype scored well above the benchmark on the UEQ, with attractiveness highest — a sign that the visual direction was working.
+- Testing only the high-fidelity prototype was a constraint rather than a plan, but 16 participants gave us a solid read. The prototype scored well above the benchmark on the UEQ, with attractiveness highest, a sign that the visual direction was working.
 - The most useful output was the issue list. Learning that 81.25% struggled to explore and zoom the map, or that 75% never realised they had to tap the map to choose a store, turned vague impressions into specific, fixable defects.
-- Every fix was small and local — clearer labels, flipping the + and – controls, auto-centring the map, treating categories as tabs and contributors as chips — yet together they removed most of the friction we had measured.`;
+- Every fix was small and local: clearer labels, flipping the + and – controls, auto-centring the map, treating categories as tabs and contributors as chips; yet together they removed most of the friction we had measured.`;

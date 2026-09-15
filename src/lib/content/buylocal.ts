@@ -30,9 +30,9 @@ BuyLocal was a project done during the pandemic. I started noticing how local bu
 
 ## Objectives
 
-- **Efficient & convenient shopping** — streamline the grocery purchasing process
-- **Promote local products** — support nearby stores and supermarkets
-- **Improved visibility** — make local store offerings discoverable online
+- **Efficient & convenient shopping**: streamline the grocery purchasing process
+- **Promote local products**: support nearby stores and supermarkets
+- **Improved visibility**: make local store offerings discoverable online
 
 ## User Research
 
@@ -121,8 +121,8 @@ As a distillation of Jonathan's expectations with the product, I crafted three u
 
 Two unique tasks were deduced that could be typically pursued by Jonathan:
 
-1. **Buying fresh products from supermarkets** — Jonathan ran out of some groceries, so he needs to refill them before dinner. He heads to his regular supermarket with his shopping list so that he could do his shopping efficiently without wasting any time. He has some local product on his list too. He just finds a plastic or fabric bag before going out.
-2. **Buying non-perishable products online** — Jonathan loves technology and likes to shop online for its convenience. He wanted to order some electronics along with general-purpose products, so he had a few items in his cart which he wants to buy using digital payments.
+1. **Buying fresh products from supermarkets**: Jonathan ran out of some groceries, so he needs to refill them before dinner. He heads to his regular supermarket with his shopping list so that he could do his shopping efficiently without wasting any time. He has some local product on his list too. He just finds a plastic or fabric bag before going out.
+2. **Buying non-perishable products online**: Jonathan loves technology and likes to shop online for its convenience. He wanted to order some electronics along with general-purpose products, so he had a few items in his cart which he wants to buy using digital payments.
 
 ![image](/work/buylocal/Untitled%209.png)
 
@@ -179,4 +179,4 @@ Use the BuyLocal app on your phone to buy cookies (Chocolate Chip Cookies, two p
 ## Takeaways
 
 - This project made me connect with people around me in a way I had never done before. It showed me that people's mental models are more complex than initially apparent, and nuanced, user-research-backed solutions to their problems are instrumental to their well-being.
-- I discovered Design Systems through this project—a tool I have kept using since then. It has increased my efficiency when designing and improved the quality of my output.`;
+- I discovered Design Systems through this project, a tool I have kept using since then. It has increased my efficiency when designing and improved the quality of my output.`;

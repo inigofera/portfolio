@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>About — Iñigo Artolozaga</title>
+	<title>About | Iñigo Artolozaga</title>
 </svelte:head>
 
 <!-- About -->

@@ -230,7 +230,7 @@ The following are key takeaways from the different phases of the project:
 
 ### User Research
 
-- Research shaped the product far more than the assumptions we started with. Five focus groups and seventeen interviews showed that money pooling is as much a social problem as a financial one — the design had to make contributions visible enough to build trust, yet private enough to feel safe.
+- Research shaped the product far more than the assumptions we started with. Five focus groups and seventeen interviews showed that money pooling is as much a social problem as a financial one; the design had to make contributions visible enough to build trust, yet private enough to feel safe.
 - The card ranking exercise turned out to be the most useful part of the research. Asking people to prioritise factors rather than describe them surfaced tensions we would otherwise have missed, and it gave us a clear order to design against.
 - Insights only became useful once they were tied to a flow. Translating findings into concrete features kept the design grounded, and it meant every decision could be traced back to something a real user had told us.
 
@@ -244,4 +244,4 @@ The following are key takeaways from the different phases of the project:
 
 - The usability tests were a lesson in how much presentation matters. Both prototypes shared the same underlying flows, yet effectiveness depended on the task, mobile proved more efficient, and only the web version left users satisfied.
 - Most of the issues we found were small and specific, such as unclear button labels and the lack of shortcuts to common actions. That confirmed that refinement at this stage is about removing friction, not adding features.
-- The distance between the lo-fi and hi-fi prototypes was the clearest measure of progress. Iteration — not any single idea — is what turned a workable concept into an interface people could use with confidence.`;
+- The distance between the lo-fi and hi-fi prototypes was the clearest measure of progress. Iteration, not any single idea, is what turned a workable concept into an interface people could use with confidence.`;

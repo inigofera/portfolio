@@ -29,7 +29,7 @@
 </script>
 
 <svelte:head>
-	<title>{project ? `${project.title} — Iñigo Artolozaga` : 'Project not found'}</title>
+	<title>{project ? `${project.title} | Iñigo Artolozaga` : 'Project not found'}</title>
 </svelte:head>
 
 {#if !project}

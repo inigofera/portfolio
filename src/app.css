@@ -7,7 +7,7 @@
 
 @import "tailwindcss";
 
-/* Design tokens — exact palette from the renovation prompt */
+/* Design tokens: exact palette from the renovation prompt */
 @theme {
 	--color-background: #f8f3e7;
 	--color-foreground: #24422a;

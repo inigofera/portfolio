@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>Projects — Iñigo Artolozaga</title>
+	<title>Projects | Iñigo Artolozaga</title>
 </svelte:head>
 
 <section class="mb-16">
