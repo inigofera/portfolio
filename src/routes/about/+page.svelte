@@ -77,7 +77,8 @@
 	<p class="text-lg leading-relaxed text-muted-foreground mb-4">Open to consulting, collaboration, and interesting conversations.</p>
 
 	<div class="flex items-center gap-4">
-		<a href={site.githubUrl} target="_blank" rel="noopener noreferrer" class="font-mono text-sm tracking-wide text-accent hover:underline">GitHub</a>
-		<a href={`mailto:${site.email}`} class="font-mono text-sm tracking-wide text-accent hover:underline">Email</a>
+			<a href={site.githubUrl} target="_blank" rel="noopener noreferrer" class="font-mono text-sm tracking-wide text-accent hover:underline">GitHub</a>
+			<a href={site.linkedinUrl} target="_blank" rel="noopener noreferrer" class="font-mono text-sm tracking-wide text-accent hover:underline">LinkedIn</a>
+			<a href={`mailto:${site.email}`} class="font-mono text-sm tracking-wide text-accent hover:underline">Email</a>
 	</div>
 </section>

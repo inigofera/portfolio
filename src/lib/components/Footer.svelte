@@ -7,6 +7,7 @@
 		<span class="font-mono text-sm tracking-wide text-muted-foreground">// ux engineer</span>
 		<div class="flex items-center gap-4">
 			<a href={site.githubUrl} target="_blank" rel="noopener noreferrer" class="font-mono text-sm tracking-wide text-muted-foreground hover:text-accent transition-colors duration-150">GitHub</a>
+			<a href={site.linkedinUrl} target="_blank" rel="noopener noreferrer" class="font-mono text-sm tracking-wide text-muted-foreground hover:text-accent transition-colors duration-150">LinkedIn</a>
 			<a href={`mailto:${site.email}`} class="font-mono text-sm tracking-wide text-muted-foreground hover:text-accent transition-colors duration-150">Email</a>
 		</div>
 	</div>

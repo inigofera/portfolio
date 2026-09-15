@@ -8,7 +8,8 @@ export const site = {
 		'Currently based in Amsterdam, I consult for startups and product teams on design system architecture, component library development, and interaction patterns. Previously spent several years in industry building web applications with emphasis on accessibility and responsive design.',
 		'I believe the best UX work happens when engineering discipline meets user empathy. Clean abstractions matter as much as thoughtful interactions.'
 	],
-	githubUrl: 'https://github.com/inigo-artolozaga',
+	githubUrl: 'https://github.com/inigofera',
+	linkedinUrl: 'https://www.linkedin.com/in/inigoada',
 	email: 'inigo@artolozaga.dev'
 };
 
