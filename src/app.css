@@ -149,11 +149,27 @@
 	}
 
 	/* Media */
+	.case-study-content .case-study-image {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background: none;
+	}
+
+	.case-study-content .case-study-image:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 2px;
+		border-radius: 0.5rem;
+	}
+
 	.case-study-content img {
 		max-width: 100%;
 		height: auto;
 		margin-block: 1rem 1.5rem;
 		border-radius: 0.5rem;
+		cursor: zoom-in;
 	}
 
 	/* Tables */

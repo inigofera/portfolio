@@ -1,6 +1,6 @@
 import { getProjectBySlug } from '../../../lib/data/projects';
 import type { PageLoadEvent } from '@sveltejs/kit';
-import { renderMarkdown } from '../../../lib/utils/markdown';
+import { renderMarkdown, getAllImages, wrapImagesInButtons } from '../../../lib/utils/markdown';
 import { getProjectContent } from '../../../lib/content';
 
 export async function load({ params }: PageLoadEvent) {
@@ -13,10 +13,12 @@ export async function load({ params }: PageLoadEvent) {
 
 	// Load detailed content if available for this project
 	let html = undefined;
+	let images: string[] = [];
 	const content = getProjectContent(slug);
 	if (project.hasDetailedContent && content) {
-		html = renderMarkdown(content);
+		html = wrapImagesInButtons(renderMarkdown(content));
+		images = getAllImages(content);
 	}
 
-	return { project, html };
+	return { project, html, images };
 }

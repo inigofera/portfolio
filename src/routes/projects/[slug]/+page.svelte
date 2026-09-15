@@ -1,11 +1,31 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import SectionLabel from '../../../lib/components/SectionLabel.svelte';
 	import StatusDot from '../../../lib/components/StatusDot.svelte';
 	import Tag from '../../../lib/components/Tag.svelte';
+	import Lightbox from '../../../lib/components/Lightbox.svelte';
 
 	const project = page.data.project;
 	const html = page.data.html;
+	const images = page.data.images ?? [];
+
+	let lightboxIndex = $state<number | null>(null);
+	let contentEl: HTMLDivElement | undefined = $state();
+
+	onMount(() => {
+		const el = contentEl;
+		if (!el) return;
+		const handleClick = (e: MouseEvent) => {
+			const button = (e.target as Element | null)?.closest('button.case-study-image');
+			const img = button?.querySelector('img');
+			if (!img) return;
+			const i = images.indexOf(img.getAttribute('src') ?? '');
+			if (i !== -1) lightboxIndex = i;
+		};
+		el.addEventListener('click', handleClick);
+		return () => el.removeEventListener('click', handleClick);
+	});
 </script>
 
 <svelte:head>
@@ -37,11 +57,20 @@
 
 		<!-- Render detailed HTML content if available -->
 		{#if html}
-			<div class="case-study-content">{@html html}</div>
+			<div class="case-study-content" bind:this={contentEl}>{@html html}</div>
 		{:else}
 			{#each project.description as paragraph}
 				<p class="text-lg leading-relaxed text-muted-foreground mb-4">{paragraph}</p>
 			{/each}
 		{/if}
 	</section>
+
+	{#if lightboxIndex !== null}
+		<Lightbox
+			images={images}
+			index={lightboxIndex}
+			onclose={() => (lightboxIndex = null)}
+			onnavigate={i => (lightboxIndex = i)}
+		/>
+	{/if}
 {/if}
