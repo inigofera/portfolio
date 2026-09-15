@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { projects } from '../../lib/data/projects';
-	import { projectThumbnails } from '../../lib/content';
 	import ProjectCard from '../../lib/components/ProjectCard.svelte';
 	import SectionLabel from '../../lib/components/SectionLabel.svelte';
 </script>
@@ -18,7 +17,7 @@
 <section>
 	<div class="grid auto-rows-fr grid-cols-1 gap-6 sm:grid-cols-2">
 		{#each projects as project}
-			<ProjectCard project={project} thumbnail={projectThumbnails[project.slug]} />
+			<ProjectCard project={project} thumbnail={project.thumbnail} />
 		{/each}
 	</div>
 </section>

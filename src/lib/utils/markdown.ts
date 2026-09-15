@@ -19,14 +19,6 @@ function githubSlugify(text: string): string {
 
 md.use(anchorPlugin, { slugify: githubSlugify });
 
-/**
- * Returns the `src` of the first image in a markdown document, if there is one.
- * Used to derive project thumbnails from the case-study content.
- */
-export function getFirstImage(text: string): string | undefined {
-	return text.match(/!\[[^\]]*\]\(\s*<?([^)\s>]+)/)?.[1];
-}
-
 export function renderMarkdown(text: string): string {
 	// Remove the trailing newline that markdown-it adds.
 	// Styling is handled by the `.case-study-content` rules in `app.css`.

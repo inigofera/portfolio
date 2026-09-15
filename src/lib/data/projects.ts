@@ -1,6 +1,7 @@
 export interface Project {
 	slug: string;
 	title: string;
+	thumbnail: string;
 	year: number;
 	status: 'active' | 'completed' | 'archived';
 	tags: string[];
@@ -13,6 +14,7 @@ export const projects: Project[] = [
 	{
 		slug: 'buylocal',
 		title: 'BuyLocal',
+		thumbnail: '/work/thumbs/buylocal.webp',
 		year: 2020,
 		status: 'completed',
 		tags: ['case study', 'hyperlocal delivery', 'user research'],
@@ -25,6 +27,7 @@ export const projects: Project[] = [
 	{
 		slug: 'cashpool',
 		title: 'CashPool',
+		thumbnail: '/work/thumbs/cashpool.webp',
 		year: 2019,
 		status: 'completed',
 		tags: ['case study', 'money pooling', 'group finance'],
@@ -37,6 +40,7 @@ export const projects: Project[] = [
 	{
 		slug: 'shoppersmap',
 		title: 'ShoppersMap',
+		thumbnail: '/work/thumbs/shoppersmap.webp',
 		year: 2019,
 		status: 'completed',
 		tags: ['case study', 'supermarket navigation', 'shared shopping'],
@@ -49,6 +53,7 @@ export const projects: Project[] = [
 	{
 		slug: 'buylocal-design-system',
 		title: 'BuyLocal Design System',
+		thumbnail: '/work/thumbs/buylocal-design-system.webp',
 		year: 2020,
 		status: 'completed',
 		tags: ['design system', 'mobile design', 'component library'],
