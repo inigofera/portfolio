@@ -1,0 +1,827 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>CashPool</title><meta name="data-notion-page-icon" content="💸"/><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%92%B8%3C%2Ftext%3E%3C%2Fsvg%3E"/><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="fad501dd-fff7-4674-a205-bb15841221cc" class="page sans" data-notion-page-icon="💸"><header><img class="page-cover-image" src="CashPool/Screen-Shot-2021-08-24-at-6.59.46-PM.webp" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon" data-emoji="💸"></span></div><h1 class="page-title" dir="auto">CashPool</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://app.notion.com/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>Project Overview</th><td>Money pooling app that lets users create groups and pool money towards shared goals. The app provides a platform with easy and transparent bookkeeping for the ideal money pooling experience.</td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://app.notion.com/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Category</th><td><span class="selected-value select-value-color-brown">Case Study</span></td></tr></tbody></table></header><div class="page-body"><p id="3281233c-6f25-423c-9425-ee3a68d21ed3" class="" dir="auto">CashPool is a money pooling app that lets users create groups and pool money towards shared goals. The app provides a platform with easy and transparent bookkeeping for the ideal money pooling experience.</p><figure id="f5bc53fe-76e7-490b-a664-181e2964a078" class="image" data-notion-image="CashPool/Untitled.png" dir="ltr"><a href="CashPool/Untitled.png"><img style="width:708px" src="CashPool/Untitled.png"/></a></figure><h2 id="56e00d89-a50f-47ea-ab28-1c0633d10f0f" class="" dir="auto">Table of Contents</h2><nav id="1ac91ed9-c490-4445-8bac-61125d416ebf" class="block-color-gray table_of_contents" data-notion-highlight="gray" data-notion-toc="" dir="ltr"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#56e00d89-a50f-47ea-ab28-1c0633d10f0f">Table of Contents</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1cb63b93-9476-4bd7-9eed-f40b4f0c25ff">Initial Hypothesis</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ce3cfe8d-0ac8-4e95-8f64-afce3a172783">Goal</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6964c357-3436-4536-a6c3-0323e391b9b8">Process</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5d96ef53-be0c-41cb-a881-99ee2a1704ee">Phase 1: Emphatise</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#ad33cdc3-c424-491b-a9bf-344bf92598c4"><strong>Workshopping: 5 Focus Groups</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#3a2b8817-48bc-4d40-99e7-6e266f28a612"><strong>17 individual interviews</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#26f3dc36-7174-4a28-82eb-dcb343c4bdd1"><strong>Key findings from card ranking</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e0a9a881-cb9c-4af0-b595-e44f0e924ddf">Phase 2: Define</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#d49e26fe-67a0-4440-9b60-4f9c2f6c4f33"><strong><strong>User Profiles</strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#6ce0f157-19d1-424b-84c2-34720ec060d6">Task Organization Model</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#63ae4071-66ec-46dc-bf00-60dcba43e0b9"><strong><strong>User roles</strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#d5a6904f-5fe9-4198-8f94-7276b991eab4"><strong>User Journey Map</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9bb1e542-2cec-4a27-9a38-0bfde5f5f3aa"><strong>Phase 3: Ideate</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3168ac6d-9b01-41b7-8e41-14ce91208723">Phase 4: Prototype</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8054f848-127e-469a-a6bc-7d8598ef3ef5"><strong>Phase 5: Test</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#a0124a7d-f5b1-4224-8ed0-d0649d8630ac"><strong>Usability Tests</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#17dfd9c2-521b-4e84-97f5-501bb5876bc9"><strong><strong>Usability Issues</strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#bce8741c-4fb4-438e-b0a9-1b568b314152">Final Designs</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#741d3e93-1976-4b50-9e41-40b6c9786488"><strong>Improvements of Hi-fi Prototype over Lo-fi</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#003e0500-cfb9-4122-b2ca-2440f4ba5413"><strong>Project takeaways (TODO)</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#efa6aab9-915c-4820-a47b-2207ff7ed955"><strong>User Research</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d3013e08-a100-46c7-a61b-8e5ac21cdff0"><strong>Ideation &amp; Lo-fi</strong> <strong>Prototype</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#eed2fe3d-7ce9-4636-90c8-7c6098306e07"><strong>Hi-fi prototype</strong></a></div></nav><h2 id="1cb63b93-9476-4bd7-9eed-f40b4f0c25ff" class="" dir="auto">Initial Hypothesis</h2><p id="2868f512-3f32-4e30-b4ce-a9c84384e3ee" class="" dir="auto">“Students or young adults with limited resources who are part of a community often find it difficult to collectively arrange money for their goals.”</p><h2 id="ce3cfe8d-0ac8-4e95-8f64-afce3a172783" class="" dir="auto">Goal</h2><p id="23b4743b-65b2-412b-b4ab-e26d26e21b34" class="" dir="auto">To create an application that allows users to create teams and pool money towards a common goal. The application will enable effective and engaging interaction between the users with high transparency.</p><p id="bce466a6-aab6-4a4a-b3a8-01d536856cb5" class="" dir="auto">
+</p><h1 id="6964c357-3436-4536-a6c3-0323e391b9b8" class="" dir="auto">Process</h1><p id="c57d9c7a-ff5f-4a14-94f3-5ba0d119e3cb" class="" dir="auto">For this case study, I decided to follow the Design Thinking process, which is pictured below:</p><p id="82ba9113-32c0-488a-9cce-d047cfe8b936" class="" dir="auto">
+</p><figure id="922231b8-b161-404d-9730-20eb96a4cbf7" class="image" data-notion-image="CashPool/Untitled%201.png" dir="ltr"><a href="CashPool/Untitled%201.png"><img style="width:708px" src="CashPool/Untitled%201.png"/></a></figure><p id="467f475d-b44d-4856-9fe8-e9cf10b89c95" class="" dir="auto">
+</p><h2 id="5d96ef53-be0c-41cb-a881-99ee2a1704ee" class="" dir="auto">Phase 1: Emphatise</h2><p id="b5892f7d-0ddb-40c4-ae53-ffcba5e5b8a8" class="" dir="auto"><strong>Cash pooling</strong> is an activity that involves multiple individuals, and therefore it is of vital importance to understand the human interaction dynamics involved in it to be able to leverage technology to enhance the process..</p><p id="07eb3030-c971-4816-af31-910c9e459f54" class="" dir="auto">We have an initial hypothesis that there could be variation in the behavior of the users based on their age, occupation and level of income. To evaluate this, we conducted focus group workshops and interviews. (We included working adults and students in our interviews.)</p><p id="e90889d8-365b-4387-94d3-0bb8853e56f3" class="" dir="auto">
+</p><h3 id="ad33cdc3-c424-491b-a9bf-344bf92598c4" class="" dir="auto"><strong>Workshopping: 5 Focus Groups</strong></h3><p id="d88580d6-27e0-4b04-ae40-967c7838a735" class="" dir="auto">The focus group sessions were used to<strong> simulate a live cash pooling activity</strong> within a group of friends. We also had external circumstances arise to simulate real-life situations.</p><figure id="c6cb44d1-3bfe-4a5f-9d52-5e18b5c6b25a" class="image" data-notion-image="CashPool/Untitled%202.png" dir="ltr"><a href="CashPool/Untitled%202.png"><img style="width:708px" src="CashPool/Untitled%202.png"/></a></figure><figure id="b5b6108f-5e06-40b2-85ce-369924605d43" class="image" data-notion-image="CashPool/Untitled%203.png" dir="ltr"><a href="CashPool/Untitled%203.png"><img style="width:708px" src="CashPool/Untitled%203.png"/></a></figure><p id="4bccb07c-991f-4091-920b-89fc9af2f225" class="" dir="auto">The key findings of the Focus Groups were the following:</p><ul id="ed3d7687-95e4-40af-985f-5c6fcbf44b0e" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Mutual trust was expected in the group (But people usually didn’t share how much money they had).</li></ul><ul id="b07a3460-960b-4d7a-9097-eca5ff9cf131" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Changing the money goal pooling required group discussion.</li></ul><ul id="efd7cb40-0a45-48f8-b83d-5fa047cd102a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Communication is key. Sometimes information was not relayed properly between people.</li></ul><ul id="addc6ced-dcc9-4bed-9bd3-c2f87b48f694" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Whether individual contributions should be visible to everyone was usually a group decision.</li></ul><p id="37d69cd5-96d5-4768-9972-9cd2cb43b11a" class="" dir="auto">
+</p><h3 id="3a2b8817-48bc-4d40-99e7-6e266f28a612" class="" dir="auto"><strong>17 individual interviews</strong></h3><p id="ecd877c7-1f50-43f3-a835-610dd1984b26" class="" dir="auto">We had online interviews with users about their experience and expectations on money pooling. At the end of the interview, we gave the users cards describing relevant factors in a money pooling process. We asked them to rank them in importance.</p><p id="9e52b637-5325-40c4-83fc-d42a80b402fc" class="" dir="auto">
+</p><figure id="ccab17eb-24cd-4ad7-8983-e9eb20248fc3" class="image" data-notion-image="CashPool/Untitled%204.png" dir="ltr"><a href="CashPool/Untitled%204.png"><img style="width:708px" src="CashPool/Untitled%204.png"/></a></figure><figure id="2816b786-33ea-49a6-a6c1-c2b3c5312ad6" class="image" data-notion-image="CashPool/Untitled%205.png" dir="ltr"><a href="CashPool/Untitled%205.png"><img style="width:708px" src="CashPool/Untitled%205.png"/></a></figure><p id="3d0c59f9-301b-4f85-8418-759e62001de7" class="" dir="auto">
+</p><p id="6a4a9689-561d-4dd4-8e8f-9d6fa9926860" class="" dir="auto">The key findings from the individual interviews were:</p><ul id="3eea6601-fc01-4dad-a1a0-7e49d3bc8cbe" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Varied level of commitment to cash pool.</li></ul><ul id="6c7e2cbd-b7af-4f5e-8da6-b0c2606620e0" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Preference of the transaction method is different.</li></ul><ul id="e57bd610-a951-46ba-846b-875e66f76f60" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Choice of a leader varies (most responsible, eldest in the group, person who started the pool, person who wiill contribute the most…).</li></ul><ul id="81cc64b6-e907-477d-917f-116142001d32" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Based on the goal and urgency, some people are open to borrowing the money from other users and adding it to the pool.</li></ul><h3 id="26f3dc36-7174-4a28-82eb-dcb343c4bdd1" class="" dir="auto"><strong>Key findings from card ranking</strong></h3><p id="8221a49e-e574-401c-a913-6ac31d286c5c" class="" dir="auto">The card sorting helped identify the priority for key attributes in money pooling among teenagers and young adults:</p><figure id="9b549480-73fe-411c-be89-6a7fa33c7393" class="image" data-notion-image="CashPool/Untitled%206.png" dir="ltr"><a href="CashPool/Untitled%206.png"><img style="width:708px" src="CashPool/Untitled%206.png"/></a></figure><p id="0412f530-82a9-450e-b9d1-d2e041c82a30" class="" dir="auto">
+</p><h2 id="e0a9a881-cb9c-4af0-b595-e44f0e924ddf" class="" dir="auto">Phase 2: Define</h2><p id="b45e23c8-b770-41c4-8951-74e6914d03d5" class="" dir="auto">With detailed analysis of the user research, we were able to define:</p><ol type="1" id="0fde626f-2ef2-4079-830e-c4209e0b8e13" class="numbered-list" start="1" dir="auto"><li>Two <strong>User Profiles</strong></li></ol><ol type="1" id="c08e6b84-2872-4c24-aad1-cb0e007f860f" class="numbered-list" start="2" dir="auto"><li>Two <strong>User Roles</strong></li></ol><ol type="1" id="58ba235c-17d7-4884-b4d2-c89f5d5022b2" class="numbered-list" start="3" dir="auto"><li>A <strong>Task Organization Model</strong></li></ol><ol type="1" id="3b46c5ff-74b6-410e-a749-8c96f8885c06" class="numbered-list" start="4" dir="auto"><li>A <strong>User Journey Map</strong></li></ol><h3 id="d49e26fe-67a0-4440-9b60-4f9c2f6c4f33" class="" dir="auto"><strong><strong>User Profiles</strong></strong></h3><figure id="71c1db84-b4fb-4e5b-89da-bfc1b24353c8" class="image" data-notion-image="CashPool/Untitled%207.png" dir="ltr"><a href="CashPool/Untitled%207.png"><img style="width:708px" src="CashPool/Untitled%207.png"/></a></figure><figure id="0253deab-0e08-41c2-bba9-9a0d8da247d5" class="image" data-notion-image="CashPool/Untitled%208.png" dir="ltr"><a href="CashPool/Untitled%208.png"><img style="width:708px" src="CashPool/Untitled%208.png"/></a></figure><p id="c903cc83-43a8-4fda-af48-2b7ec849d17d" class="" dir="auto">
+</p><h3 id="6ce0f157-19d1-424b-84c2-34720ec060d6" class="" dir="auto">Task Organization Model</h3><figure id="dbf7947e-7f99-42b3-adf5-8e425e941025" class="image" data-notion-image="CashPool/Untitled%209.png" dir="ltr"><a href="CashPool/Untitled%209.png"><img style="width:708px" src="CashPool/Untitled%209.png"/></a></figure><p id="9c0faa97-277a-4ddf-a361-1d506ba3deec" class="" dir="auto">
+</p><h3 id="63ae4071-66ec-46dc-bf00-60dcba43e0b9" class="" dir="auto"><strong><strong>User roles</strong></strong></h3><p id="be0a1790-ba72-431e-aa8d-eecc1bcc9c45" class="" dir="auto">It was evident from our research that there are two user roles in money pooling Leader and the member.</p><p id="c0806612-d658-4ea4-af15-fa72dcda1bc1" class="" dir="auto">
+</p><p id="c20c3dd2-7950-4325-95ac-15df9df4b363" class="" dir="auto"><strong>Leader</strong></p><ul id="6519a027-7ce7-4590-91cc-7fd97f612b63" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Responsible for managing the money pool. They are part of the team and are selected by the team.</li></ul><ul id="8d2e3be7-bb8f-4a69-bd00-3c49836bd0b0" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Gets informed when pool activities are not following the schedule.</li></ul><ul id="522ee7a0-03d2-44ee-932e-76dcef3e5b6f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Settles disputes.</li></ul><ul id="dc0fbeff-7eea-4bbd-b977-87e7747d5e1c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Handles the pooled money.</li></ul><p id="523f36c5-1134-44bc-94ac-0a9b9ee6bef0" class="" dir="auto">
+</p><p id="80b68eb9-0f20-425b-825c-f8d2246fa6db" class="" dir="auto"><strong>Member</strong></p><ul id="3ce9bde5-1961-4d45-b908-6b52c1986b28" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Joins the pool group and contributes money towards the common goal.</li></ul><ul id="e6c2dc1d-e836-4256-8b1b-70570128d0fc" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Adds money to the pool.</li></ul><ul id="7b115ca4-bc0e-4ca4-bb94-d8c78777f865" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Checks the status of his contribution and pool.</li></ul><ul id="17f83e80-1dee-4523-a582-4b842f78ddf1" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Raises issues.</li></ul><p id="d98d5e83-658d-4aa9-b242-eed3f0fba4d9" class="" dir="auto">
+</p><h3 id="d5a6904f-5fe9-4198-8f94-7276b991eab4" class="" dir="auto"><strong>User Journey Map</strong></h3><p id="3b7799c0-876d-4b7b-adf0-0e70303bbbb0" class="" dir="auto">From the information gathered, we organized the user tasks and then created a User Journey Map to understand the users’ experience throughout the process.</p><p id="cafa0a45-0074-4c87-b188-53c75b346a1d" class="" dir="auto">
+</p><p id="d082f6dc-4b39-459c-a03b-2172e085d930" class="" dir="auto"><strong><strong>Teenager Journey Map</strong></strong></p><figure id="4bb9e4ba-265f-43c8-9b17-770ad6e08810" class="image" data-notion-image="CashPool/Untitled%2010.png" dir="ltr"><a href="CashPool/Untitled%2010.png"><img style="width:708px" src="CashPool/Untitled%2010.png"/></a></figure><p id="76251f68-c1a7-46dd-ae89-0673894094b2" class="" dir="auto">
+</p><p id="2be128ec-f46b-467b-9695-5c2cf821e082" class="" dir="auto"><strong><strong>Working Adult Journey Map</strong></strong></p><figure id="f7b61ede-a2fb-448f-95fa-b809d3c14cb5" class="image" data-notion-image="CashPool/Untitled%2011.png" dir="ltr"><a href="CashPool/Untitled%2011.png"><img style="width:708px" src="CashPool/Untitled%2011.png"/></a></figure><p id="6e8cba36-1c07-4379-90ed-2c5977b8b962" class="" dir="auto">
+</p><p id="42c8f1aa-e6cf-41f4-a18d-635e84cd350d" class="" dir="auto">
+</p><h2 id="9bb1e542-2cec-4a27-9a38-0bfde5f5f3aa" class="" dir="auto"><strong>Phase 3: Ideate</strong></h2><p id="4590d227-9109-43c3-a7f7-dbbb71e86e58" class="" dir="auto">With a detailed understanding of the user tasks, we started brainstorming ideas and sketching.</p><figure id="a1fafaa6-e232-4ab3-819e-87864ad90065" class="image" data-notion-image="CashPool/Untitled%2012.png" dir="ltr"><a href="CashPool/Untitled%2012.png"><img style="width:708px" src="CashPool/Untitled%2012.png"/></a></figure><figure id="7f531d86-1670-4f45-ade2-6e18bceacbfd" class="image" data-notion-image="CashPool/Untitled%2013.png" dir="ltr"><a href="CashPool/Untitled%2013.png"><img style="width:708px" src="CashPool/Untitled%2013.png"/></a></figure><p id="333a9c88-7ae1-428e-b058-cd8a342a19a1" class="" dir="auto">
+</p><p id="a4970726-fc9d-436e-9e58-085fb7dccac2" class="" dir="auto">We used dot voting to define each feature, further brainstormed on them, and finally rearranged them taskwise to identify missing screens. We understood from the user analysis that working adults use desktop applications, so we included both web and mobile applications in the low fi prototype stage.</p><p id="4add27d2-f8ca-4058-bd2e-3934d35be73a" class="" dir="auto">
+</p><figure id="997ac446-7db6-4688-8303-3a58ee922128" class="image" data-notion-image="CashPool/Untitled%2014.png" dir="ltr"><a href="CashPool/Untitled%2014.png"><img style="width:708px" src="CashPool/Untitled%2014.png"/></a></figure><p id="af9006b2-03d4-45d3-8f33-2fbb2abb10f0" class="" dir="auto">
+</p><h2 id="3168ac6d-9b01-41b7-8e41-14ce91208723" class="" dir="auto">Phase 4: Prototype</h2><p id="ef2a54d3-ee24-463d-afb1-34fbcd60ace3" class="" dir="auto">We converted our rough sketches into lo-fi prototypes using Balsamiq. Main features:</p><ol type="1" id="b69a3c7b-2509-44c8-8b50-63c4909c8331" class="numbered-list" start="1" dir="auto"><li>Pool creation &amp; management</li></ol><ol type="1" id="dcf16bf9-c9b5-4b15-b7d8-44180c75a9dd" class="numbered-list" start="2" dir="auto"><li>Resolving conflicts through polling</li></ol><ol type="1" id="7714675f-95d3-44fa-9a93-266480134c39" class="numbered-list" start="3" dir="auto"><li>Pool Participation</li></ol><p id="28c16a62-6c92-48ab-9697-dc59c7b464b0" class="" dir="auto">
+</p><figure id="dabdf33b-7e9b-4939-8383-53e6f2192f0b" class="image" data-notion-image="CashPool/Untitled%2015.png" dir="ltr"><a href="CashPool/Untitled%2015.png"><img style="width:708px" src="CashPool/Untitled%2015.png"/></a></figure><figure id="b30b7d69-4090-4645-9437-c56832fdc545" class="image" data-notion-image="CashPool/Untitled%2016.png" dir="ltr"><a href="CashPool/Untitled%2016.png"><img style="width:708px" src="CashPool/Untitled%2016.png"/></a></figure><figure id="fd5d042f-697d-44a3-9f8e-d87531e2bd42" class="image" data-notion-image="CashPool/Untitled%2017.png" dir="ltr"><a href="CashPool/Untitled%2017.png"><img style="width:708px" src="CashPool/Untitled%2017.png"/></a></figure><figure id="41d86575-0adb-4d4d-9a7b-8aef00c4c8fe" class="image" data-notion-image="CashPool/Untitled%2018.png" dir="ltr"><a href="CashPool/Untitled%2018.png"><img style="width:708px" src="CashPool/Untitled%2018.png"/></a></figure><figure id="1670ce7c-fdd6-46dd-bfca-59ae6d65cd2c" class="image" data-notion-image="CashPool/Untitled%2019.png" dir="ltr"><a href="CashPool/Untitled%2019.png"><img style="width:708px" src="CashPool/Untitled%2019.png"/></a></figure><p id="fe455a54-8a46-4ba3-9c37-abde86bbf611" class="" dir="auto">
+</p><p id="f59588ae-45ad-4781-b9be-375918f5e5a1" class="" dir="auto">
+</p><h2 id="8054f848-127e-469a-a6bc-7d8598ef3ef5" class="" dir="auto"><strong>Phase 5: Test</strong></h2><p id="efd06ef2-ac46-471a-9d4c-4281afe89c97" class="" dir="auto">
+</p><h3 id="a0124a7d-f5b1-4224-8ed0-d0649d8630ac" class="" dir="auto"><strong>Usability Tests</strong></h3><p id="c8fff7d4-1e9e-4ce1-b140-d4aab270b471" class="" dir="auto">We conducted 8 usability tests with 5 female and 3 male users, of which 5 belonged to the working adult’s profile and 3 to the student profile. One team member facilitating the interview, and the second member observed and took notes. The <a href="https://docs.google.com/document/d/1PAU9ExIGKGgeV641yLNI2B3dlLMLcOBR/edit?usp=sharing&amp;ouid=113847870690771375529&amp;rtpof=true&amp;sd=true">task document</a> was shared through Google Docs and the prototype was tested in Figma while screen sharing.</p><p id="17a9e267-5acf-4050-989c-5d74dd1a425c" class="" dir="auto">
+</p><p id="abf1b9af-3921-4cb1-95f7-bb0768483a2c" class="" dir="auto"><strong>Effectiveness</strong></p><p id="e26c8dd9-e08c-4c62-9356-db4c0d4c1e28" class="" dir="auto">We defined the optimum amount of steps required to complete a task and kept it as a benchmark to evaluate the prototype. Any deviation from this was counted as a mistake.</p><p id="66287a0f-ee5e-4191-b1e1-2109be3e2294" class="" dir="auto">The Web prototype showed better results for Task 1 and the Mobile one did better in Task 2.</p><figure id="89ed6292-2fca-4a86-bb9f-474e23d67568" class="image" data-notion-image="CashPool/Untitled%2020.png" dir="ltr"><a href="CashPool/Untitled%2020.png"><img style="width:708px" src="CashPool/Untitled%2020.png"/></a></figure><p id="ddb3bd74-daa1-44a2-8a57-fa3d558acf2f" class="" dir="auto">Any elemental action done by the user was recorded and compared among the different tasks. This helped in identifying areas of the interface that were confusing for the user.</p><p id="602f0293-2331-4543-8a5c-aa476a878e84" class="" dir="auto">
+</p><p id="8a24d9e3-fa6e-4ed7-878f-5ce838909a16" class="" dir="auto"><strong>Efficiency</strong></p><p id="932714ae-7135-4e86-a1e3-baab2eadf198" class="" dir="auto">The Mobile prototype showed more efficiency.</p><figure id="14026a68-4998-4781-a4da-c5843d59fbea" class="image" data-notion-image="CashPool/Untitled%2021.png" dir="ltr"><a href="CashPool/Untitled%2021.png"><img style="width:708px" src="CashPool/Untitled%2021.png"/></a></figure><figure id="8713aea2-4da5-4411-b113-7a3346b105df" class="image" data-notion-image="CashPool/Untitled%2022.png" dir="ltr"><a href="CashPool/Untitled%2022.png"><img style="width:708px" src="CashPool/Untitled%2022.png"/></a></figure><p id="17dc8065-d26b-4911-bac6-c7f5a81a7f8a" class="" dir="auto">
+</p><p id="0e5d43a9-bc9c-4c38-85ff-0d39e498e54e" class="" dir="auto"><strong><strong>User satisfaction</strong></strong></p><figure id="0be6ab0a-97aa-442b-b9a0-b0b1a9d19f1c" class="image" data-notion-image="CashPool/Untitled%2023.png" dir="ltr"><a href="CashPool/Untitled%2023.png"><img style="width:408px" src="CashPool/Untitled%2023.png"/></a></figure><p id="ad719f9a-0951-4d75-90c5-1b27493b2a14" class="" dir="auto">We used a standardized user satisfaction questionnaire to evaluate if the users liked the application.</p><p id="4ba4252b-98ca-43b0-b11b-1e2b24d1f55d" class="" dir="auto">We received more positive and convergent results for CashPool Web, whereas the results for CashPool Mobile were more negative and divergent.</p><p id="3c9fef2f-e76e-448d-ab21-a43ed309b9bb" class="" dir="auto">Users reported a <strong>more satisfactory experience</strong> with the Web prototype.</p><figure id="2c2267bd-3d97-4dc6-bdcc-e7b0b6775134" class="image" data-notion-image="CashPool/Untitled%2024.png" dir="ltr"><a href="CashPool/Untitled%2024.png"><img style="width:708px" src="CashPool/Untitled%2024.png"/></a></figure><p id="a7ef1bc8-b469-4391-93f8-f4d1bc9e990e" class="" dir="auto">
+</p><h3 id="17dfd9c2-521b-4e84-97f5-501bb5876bc9" class="" dir="auto"><strong><strong>Usability Issues</strong></strong></h3><p id="8ad68695-3870-4128-a734-244f976561f3" class="" dir="auto">
+</p><p id="2230fd2a-eb6e-4768-8e80-0939b929530e" class="" dir="auto"><strong><strong>Mobile</strong></strong></p><figure id="437003ec-f831-4d3d-8df3-52718056294e" class="image" data-notion-image="CashPool/Untitled%2025.png" dir="ltr"><a href="CashPool/Untitled%2025.png"><img style="width:708px" src="CashPool/Untitled%2025.png"/></a></figure><p id="e9692029-7d23-492e-bd76-6860deeed64c" class="" dir="auto">
+</p><p id="dfe409a4-52cb-493d-a95e-daa892296eef" class="" dir="auto"><strong><strong>Web</strong></strong></p><figure id="cf3576b8-a75a-4ff2-8388-a850b52beb70" class="image" data-notion-image="CashPool/Untitled%2026.png" dir="ltr"><a href="CashPool/Untitled%2026.png"><img style="width:708px" src="CashPool/Untitled%2026.png"/></a></figure><figure id="9e0dbcde-d34b-40c5-b0ee-4d098b25e825" class="image" data-notion-image="CashPool/Untitled%2027.png" dir="ltr"><a href="CashPool/Untitled%2027.png"><img style="width:708px" src="CashPool/Untitled%2027.png"/></a></figure><h2 id="bce8741c-4fb4-438e-b0a9-1b568b314152" class="" dir="auto">Final Designs</h2><figure id="324a32b3-d9ae-4980-bbb5-fa4e511e0c85" class="image" data-notion-image="CashPool/Untitled%2028.png" dir="ltr"><a href="CashPool/Untitled%2028.png"><img style="width:708px" src="CashPool/Untitled%2028.png"/></a></figure><h3 id="741d3e93-1976-4b50-9e41-40b6c9786488" class="" dir="auto"><strong>Improvements of Hi-fi Prototype over Lo-fi</strong></h3><p id="3431750d-eea5-4550-8f92-dcc387f4c07b" class="" dir="auto"><strong>Shortcuts to commonly used functions</strong></p><figure id="05c78367-08dd-430e-a65c-2456af675b71" class="image" data-notion-image="CashPool/Untitled%2029.png" dir="ltr"><a href="CashPool/Untitled%2029.png"><img style="width:708px" src="CashPool/Untitled%2029.png"/></a></figure><p id="66152bdd-7123-40b3-8488-08ece174e602" class="" dir="auto">
+</p><p id="4deabe18-669c-482c-959e-610b0fce09cc" class="" dir="auto"><strong><strong>Improved Button Label and Flow for Contribution</strong></strong></p><figure id="7a436170-b33e-4c99-9308-82b8c80ecd66" class="image" data-notion-image="CashPool/Untitled%2030.png" dir="ltr"><a href="CashPool/Untitled%2030.png"><img style="width:708px" src="CashPool/Untitled%2030.png"/></a></figure><p id="de3f35e4-6f95-4bb3-9b85-58f7acee14b4" class="" dir="auto">
+</p><h1 id="003e0500-cfb9-4122-b2ca-2440f4ba5413" class="" dir="auto"><strong>Project takeaways (TODO)</strong></h1><p id="7cb80e65-354f-4c96-bb8e-6fb948b4e2b3" class="" dir="auto">The following are key takeaways from the different phases of the project:</p><h3 id="efa6aab9-915c-4820-a47b-2207ff7ed955" class="" dir="auto"><strong>User Research</strong></h3><ul id="5e9e4fd9-99a1-45f7-a4e0-8445c2531555" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Key insights about needs &amp; behaviours</li></ul><ul id="eeb44cc0-04b5-41ae-808c-c88402f6a151" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Design appropriate features/flow</li></ul><h3 id="d3013e08-a100-46c7-a61b-8e5ac21cdff0" class="" dir="auto"><strong>Ideation &amp; Lo-fi</strong> <strong>Prototype</strong></h3><ul id="2aa8677d-af97-4f20-b65d-6cb53fb12049" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Experimentation/ideas.</li></ul><ul id="b344059b-1948-463e-9075-eb867f171eb6" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Tried and tested several design elements → selecting from the best</li></ul><ul id="4c6cdc7f-52ae-4c6c-b5c6-bda111be25f9" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Better understanding of user behaviour</li></ul><h3 id="eed2fe3d-7ce9-4636-90c8-7c6098306e07" class="" dir="auto"><strong>Hi-fi prototype</strong></h3><ul id="a5e9d64d-e70b-40ae-bf33-c60f8856db28" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Fine-tuning each component</li></ul><ul id="f09aa704-b725-400c-89a2-ddd52d5782ad" class="bulleted-list" dir="auto"><li style="list-style-type:disc">In-depth understanding</li></ul><ul id="4d7db8b1-f229-4184-990f-c11fba1fd893" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Significant Improvement in interface</li></ul><p id="04969b92-cdf1-44a7-846c-8b3fb54afd72" class="" dir="auto">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
