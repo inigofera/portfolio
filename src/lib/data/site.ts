@@ -1,13 +1,14 @@
 export const site = {
 	name: 'Iñigo Artolozaga',
-	roleLabel: 'USER EXPERIENCE ENGINEER',
-	location: 'Delft, South Holland, Netherlands',
+	roleLabel: 'UX ENGINEER',
+	roleTitle: 'UX Engineer',
+	location: 'Delft, Netherlands',
 	bioShort:
-		'User experience engineer working across research, design, and engineering. Currently at Fizyr, previously UX designer at Salesdock.',
+		'UX engineer working between interaction design and frontend engineering. I build the components, dashboards, and configuration tools that make complex software feel simple.',
 	bioLong: [
-		'I work where user research meets design engineering. I run the full design process, from research and prototyping to delivery, and care as much about the strategy behind the work as the work itself.',
-		'Currently a User Experience Engineer at Fizyr in Delft. Before that I spent two and a half years at Salesdock as UX Designer on a multi-platform CRM for sales teams, owning everything from research to knowledge management. Earlier: UX research at Awaves, an internship at RemNote in Berlin on personal knowledge management, and marketing automation at Accenture Song in Madrid.',
-		'I hold MSc degrees in Interaction Technology, User Experience Design (University of Twente), Human-Computer Interaction Design (UPM), and Digital Innovation (EIT Digital), on top of a BSc in Computer Science. I am drawn to knowledge management, eHealth, and products that make complex things feel simple.'
+		'I work at the intersection of interaction design and engineering. My focus is the unglamorous middle ground between them: the design systems, components, and configuration surfaces that decide whether a product feels coherent or improvised.',
+		'Currently a UX Engineer at Fizyr, where I design and build operator interfaces and configuration tools for warehouse robotics — work that has to hold up on a busy warehouse floor, not just in a design file. Before that, at Salesdock, I ran research and design for a multi-platform sales CRM and worked on raising the UX maturity of the company as a whole.',
+		'I started out in user research — studying at the University of Twente, the Universidad Politécnica de Madrid, and EIT Digital — and never lost the habit of grounding interface decisions in what people actually do. Clean abstractions matter as much as thoughtful interactions, and the best work happens where the two meet.'
 	],
 	githubUrl: 'https://github.com/inigofera',
 	linkedinUrl: 'https://www.linkedin.com/in/inigoada',

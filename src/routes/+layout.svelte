@@ -2,12 +2,13 @@
 	import '../app.css';
 	import Header from '../lib/components/Header.svelte';
 	import Footer from '../lib/components/Footer.svelte';
+	import { site } from '../lib/data/site';
 
-	let { children, title } = $props();
+	let { children } = $props();
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+	<title>{site.name} — {site.roleTitle}</title>
 </svelte:head>
 
 <div class="min-h-screen flex flex-col bg-background text-foreground font-sans antialiased">

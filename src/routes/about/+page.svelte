@@ -69,8 +69,13 @@
 		<div class="bg-card border border-border rounded-[0.75rem] p-6 mb-4 transition-colors duration-150 hover:border-accent">
 			<h3 class="text-lg font-semibold">{exp.role}</h3>
 			<p class="font-mono text-sm tracking-wide text-muted-foreground mt-1">{exp.company} | {exp.dates}</p>
-			{#if exp.location}
-				<p class="font-mono text-xs tracking-wide text-muted-foreground/70 mt-1">{exp.location}</p>
+			{#if exp.type || exp.location}
+				<p class="font-mono text-xs tracking-wide text-muted-foreground/70 mt-1">
+					{[exp.type, exp.location].filter(Boolean).join(' · ')}
+				</p>
+			{/if}
+			{#if exp.summary}
+				<p class="text-sm leading-relaxed text-muted-foreground mt-4">{exp.summary}</p>
 			{/if}
 
 			{#each exp.description as desc}
@@ -89,8 +94,8 @@
 		<div class="bg-card border border-border rounded-[0.75rem] p-6 mb-4 transition-colors duration-150 hover:border-accent">
 			<h3 class="text-lg font-semibold">{edu.degree}</h3>
 			<p class="font-mono text-sm tracking-wide text-muted-foreground mt-1">{edu.institution} | {edu.dates}</p>
-			{#if edu.details}
-				<p class="text-sm leading-relaxed text-muted-foreground mt-4">{edu.details}</p>
+			{#if edu.detail}
+				<p class="text-sm leading-relaxed text-muted-foreground mt-4">{edu.detail}</p>
 			{/if}
 		</div>
 	{/each}

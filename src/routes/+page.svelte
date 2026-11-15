@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>{site.name} | User Experience Engineer</title>
+	<title>{site.name} — {site.roleTitle}</title>
 	<link rel="preload" as="image" href={HERO_IMAGE} />
 </svelte:head>
 
