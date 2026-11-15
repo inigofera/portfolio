@@ -1,9 +1,9 @@
 import { getProjectBySlug } from '../../../lib/data/projects';
-import type { PageLoadEvent } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
 import { renderMarkdown, getAllImages, wrapImagesInButtons } from '../../../lib/utils/markdown';
 import { getProjectContent } from '../../../lib/content';
 
-export async function load({ params }: PageLoadEvent) {
+export const load: PageLoad = async ({ params }) => {
 	const slug = params.slug ?? '';
 	const project = getProjectBySlug(slug);
 
